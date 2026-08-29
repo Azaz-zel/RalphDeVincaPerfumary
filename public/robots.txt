@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Work in progress — not ready to be indexed yet.
+Disallow: /articles
+
+# Generated placeholder images carry no content value.
+Disallow: /placeholder/
+
+Sitemap: http://ralphdevincaperfumary.test/sitemap.xml

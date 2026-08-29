@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+ * Responsive display headings.
+ *
+ * Most headings across the site were written with a single fixed size
+ * (text-4xl/5xl/6xl) tuned for desktop, which overflows and wraps badly on
+ * phones. Rather than hand-editing 130+ headings, scale those utilities down
+ * below the `sm` breakpoint. Pages that already declare their own responsive
+ * variants (e.g. `text-4xl sm:text-5xl`) are unaffected on larger screens.
+ */
+@media (max-width: 639px) {
+    .text-4xl {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    .text-5xl {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .text-6xl {
+        font-size: 2.25rem;
+        line-height: 1.1;
+    }
+
+    /* Wide letter-spacing eats horizontal space on narrow screens. */
+    .tracking-\[0\.5em\] {
+        letter-spacing: 0.3em;
+    }
+
+    .tracking-\[0\.4em\] {
+        letter-spacing: 0.25em;
+    }
+
+    .tracking-\[0\.35em\] {
+        letter-spacing: 0.22em;
+    }
+}
+
+/* Never let a stray wide element cause horizontal scrolling on mobile. */
+body {
+    overflow-x: hidden;
+}

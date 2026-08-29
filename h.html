@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home - Ralph De Vinca Perfumary</title>
+
+    <script>
+        if (
+            localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <link rel="preload" as="style" href="http://ralphdevincaperfumary.test/build/assets/app-CIx7iJ5c.css" /><link rel="modulepreload" as="script" href="http://ralphdevincaperfumary.test/build/assets/app-DjzTX6_h.js" /><link rel="stylesheet" href="http://ralphdevincaperfumary.test/build/assets/app-CIx7iJ5c.css" /><script type="module" src="http://ralphdevincaperfumary.test/build/assets/app-DjzTX6_h.js"></script>
+</head>
+
+<body class="bg-stone-50 text-stone-900 dark:bg-[#1B1A17] dark:text-stone-100 transition-colors duration-300">
+
+    <nav class="sticky top-0 z-50 border-b border-stone-200 bg-stone-50/90 backdrop-blur transition-colors duration-300 dark:border-stone-700 dark:bg-[#232323]/90">
+
+    <div class="flex h-20 items-center justify-between px-6 sm:px-10 xl:px-16 2xl:px-24">
+
+        <!-- Logo -->
+        <a href="http://ralphdevincaperfumary.test" class="leading-none">
+
+            <span class="block font-serif text-2xl font-semibold tracking-tight text-stone-900 transition hover:text-[#B08D57] dark:text-stone-100 sm:text-[2.1rem]">
+                Ralph de Vinca
+            </span>
+
+            <span class="mt-1 block text-[9px] uppercase tracking-[0.4em] text-stone-500 dark:text-stone-400 sm:text-[11px] sm:tracking-[0.5em]">
+                Perfumary
+            </span>
+
+        </a>
+
+        <!-- Desktop menu -->
+        <div class="hidden items-center gap-8 text-sm font-medium text-stone-700 transition-colors duration-200 dark:text-stone-200 lg:flex xl:gap-10">
+
+            
+                <a href="http://ralphdevincaperfumary.test"
+                    class="transition hover:text-[#B08D57] text-[#B08D57]">
+                    Home
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/explore"
+                    class="transition hover:text-[#B08D57] ">
+                    Explore
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/brands"
+                    class="transition hover:text-[#B08D57] ">
+                    Brands
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/notes"
+                    class="transition hover:text-[#B08D57] ">
+                    Notes
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/academy"
+                    class="transition hover:text-[#B08D57] ">
+                    Academy
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/about"
+                    class="transition hover:text-[#B08D57] ">
+                    About
+                </a>
+
+            
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+            type="button"
+            id="mobile-menu-button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            class="flex h-11 w-11 items-center justify-center rounded-xl border border-stone-300 text-stone-700 transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-700 dark:text-stone-200 lg:hidden">
+
+            <svg id="mobile-menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+
+            <svg id="mobile-menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+
+        </button>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden border-t border-stone-200 bg-stone-50 dark:border-stone-700 dark:bg-[#232323] lg:hidden">
+
+        <div class="flex flex-col px-6 py-4 sm:px-10">
+
+            
+                <a href="http://ralphdevincaperfumary.test"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-[#B08D57]">
+                    Home
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/explore"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-stone-700 dark:text-stone-200">
+                    Explore
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/brands"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-stone-700 dark:text-stone-200">
+                    Brands
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/notes"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-stone-700 dark:text-stone-200">
+                    Notes
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/academy"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-stone-700 dark:text-stone-200">
+                    Academy
+                </a>
+
+            
+                <a href="http://ralphdevincaperfumary.test/about"
+                    class="border-b border-stone-200 py-4 text-sm font-medium transition last:border-0 hover:text-[#B08D57] dark:border-stone-700 text-stone-700 dark:text-stone-200">
+                    About
+                </a>
+
+            
+        </div>
+
+    </div>
+
+</nav>
+
+    <main>
+        
+<section class="relative overflow-hidden">
+
+    <div class="mx-auto flex min-h-[85vh] max-w-7xl items-center px-8 py-16 lg:px-16">
+
+        
+        <div class="w-full lg:w-1/2">
+
+            <span class="inline-block rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 dark:bg-stone-800 dark:text-stone-300">
+                Indonesia's Fragrance Encyclopedia
+            </span>
+
+            <h1 class="mt-8 font-serif text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+
+                Discover the
+                <span class="text-[#B08D57]">
+                    Art of Fragrance
+                </span>
+
+            </h1>
+
+            <p class="mt-8 max-w-xl text-base leading-8 text-stone-600 transition-colors duration-300 dark:text-stone-400 lg:text-lg">
+
+                Learn perfume notes, fragrance families,
+                discover iconic perfumes, and find the scent
+                that perfectly matches your personality.
+
+            </p>
+
+            
+            <form action="http://ralphdevincaperfumary.test/explore" method="GET" class="mt-10 max-w-xl">
+
+                <div class="relative">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-stone-400"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+                    </svg>
+
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Search perfumes, brands, or notes..."
+                        class="w-full rounded-full border border-stone-300 bg-white py-4 pl-14 pr-32 outline-none transition focus:border-[#B08D57] dark:border-stone-700 dark:bg-[#232323]">
+
+                    <button
+                        type="submit"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[#B08D57] px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90">
+                        Search
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="mt-6 flex flex-wrap gap-4">
+
+                <a
+                    href="http://ralphdevincaperfumary.test/explore"
+                    class="rounded-full bg-stone-900 px-8 py-4 font-medium text-white transition hover:bg-[#B08D57] dark:bg-stone-100 dark:text-stone-900">
+
+                    Explore Perfumes
+
+                </a>
+
+                <a
+                    href="http://ralphdevincaperfumary.test/academy"
+                    class="rounded-full border border-stone-300 px-8 py-4 font-medium transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-600">
+
+                    Learn Academy
+
+                </a>
+
+            </div>
+
+            
+            
+                <div class="mt-12">
+
+                    <p class="mb-4 text-sm uppercase tracking-[0.3em] text-stone-500 transition-colors duration-300 dark:text-stone-400">
+
+                        Popular Families
+
+                    </p>
+
+                    <div class="flex flex-wrap gap-3">
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Woody"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Woody
+
+                            </a>
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Floral"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Floral
+
+                            </a>
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Gourmand"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Gourmand
+
+                            </a>
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Fresh"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Fresh
+
+                            </a>
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Amber"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Amber
+
+                            </a>
+
+                        
+                            <a
+                                href="http://ralphdevincaperfumary.test/explore?family%5B0%5D=Aquatic"
+                                class="rounded-full bg-stone-100 px-4 py-2 text-sm text-stone-700 transition hover:bg-[#B08D57] hover:text-white dark:bg-stone-800 dark:text-stone-300">
+
+                                Aquatic
+
+                            </a>
+
+                        
+                    </div>
+
+                </div>
+
+            
+        </div>
+
+        
+        <div class="hidden w-1/2 justify-center lg:flex">
+
+            
+                <a href="http://ralphdevincaperfumary.test/perfume/bleu-de-chanel-eau-de-parfum" class="group block text-center">
+
+                    <img
+                        src="http://ralphdevincaperfumary.test/images/perfumes/bleu-de-chanel-edp.jpg"
+                        onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/bleu-de-chanel-eau-de-parfum';"
+                        class="w-[420px] rounded-3xl drop-shadow-2xl transition duration-700 group-hover:scale-105"
+                        alt="Bleu de Chanel Eau de Parfum">
+
+                    <p class="mt-6 text-xs uppercase tracking-[0.3em] text-stone-500">
+                        Trending Now
+                    </p>
+
+                    <p class="mt-2 font-serif text-2xl transition group-hover:text-[#B08D57]">
+                        Bleu de Chanel Eau de Parfum
+                    </p>
+
+                    <p class="mt-1 text-sm text-stone-500">
+                        Chanel
+                    </p>
+
+                </a>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+<section class="py-24 transition-colors duration-300">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        
+        <div class="mb-16 text-center">
+
+            <p class="text-sm uppercase tracking-[0.4em] text-[#B08D57]">
+                Browse
+            </p>
+
+            <h2 class="mt-3 font-serif text-4xl font-semibold lg:text-5xl">
+                Choose Your Fragrance Journey
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-2xl text-base text-stone-600 dark:text-stone-400 lg:text-lg">
+                Begin your fragrance journey through curated paths.
+            </p>
+
+        </div>
+
+        
+        <div class="grid gap-8 lg:grid-cols-3">
+
+            
+            <a href="http://ralphdevincaperfumary.test/explore"
+                class="group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323] lg:col-span-2">
+
+                <img
+                    src="http://ralphdevincaperfumary.test/images/ui/category-perfumes.jpg"
+                    class="h-72 w-full object-cover transition duration-700 group-hover:scale-105 sm:h-80"
+                    alt="Explore Perfumes">
+
+                <div class="p-8">
+
+                    <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                        130 Fragrances
+                    </p>
+
+                    <h3 class="mt-4 font-serif text-3xl lg:text-4xl">
+                        Explore Perfumes
+                    </h3>
+
+                    <p class="mt-4 max-w-2xl leading-8 text-stone-600 dark:text-stone-400">
+                        Discover luxury, niche, designer, and artisan fragrances
+                        from around the world.
+                    </p>
+
+                    <span class="mt-8 inline-block font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                        Explore →
+                    </span>
+
+                </div>
+
+            </a>
+
+            
+            <a href="http://ralphdevincaperfumary.test/academy"
+                class="group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+                <img
+                    src="http://ralphdevincaperfumary.test/images/ui/category-academy.jpg"
+                    class="h-72 w-full object-cover transition duration-700 group-hover:scale-105 sm:h-80"
+                    alt="Academy">
+
+                <div class="p-8">
+
+                    <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                        Learn
+                    </p>
+
+                    <h3 class="mt-4 font-serif text-3xl">
+                        Fragrance Academy
+                    </h3>
+
+                    <p class="mt-4 leading-7 text-stone-600 dark:text-stone-400">
+                        Learn notes, concentration, projection,
+                        longevity, and fragrance families.
+                    </p>
+
+                    <span class="mt-8 inline-block font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                        Learn →
+                    </span>
+
+                </div>
+
+            </a>
+
+            
+            <a href="http://ralphdevincaperfumary.test/brands"
+                class="group rounded-3xl border border-stone-200 bg-white p-8 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+                <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                    24 Houses
+                </p>
+
+                <h3 class="mt-4 font-serif text-3xl">
+                    Fragrance Houses
+                </h3>
+
+                <p class="mt-4 leading-7 text-stone-600 dark:text-stone-400">
+                    From centuries-old maisons to independent niche perfumers —
+                    explore the houses behind the fragrances.
+                </p>
+
+                <span class="mt-8 inline-block font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                    Browse Houses →
+                </span>
+
+            </a>
+
+            
+            <a href="http://ralphdevincaperfumary.test/notes"
+                class="group rounded-3xl border border-stone-200 bg-white p-8 shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323] lg:col-span-2">
+
+                <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                    169 Raw Materials
+                </p>
+
+                <h3 class="mt-4 font-serif text-3xl">
+                    Fragrance Notes
+                </h3>
+
+                <p class="mt-4 max-w-2xl leading-7 text-stone-600 dark:text-stone-400">
+                    The building blocks of every scent — from rare naturals like
+                    oud and orris to modern molecules like Iso E Super.
+                </p>
+
+                <span class="mt-8 inline-block font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                    Browse Notes →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="py-24">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        
+        <div class="mb-16 flex flex-wrap items-end justify-between gap-6">
+
+            <div>
+                <p class="text-sm uppercase tracking-[0.4em] text-[#B08D57]">
+                    Explore
+                </p>
+
+                <h2 class="mt-3 font-serif text-4xl font-semibold lg:text-5xl">
+                    Trending Perfumes
+                </h2>
+
+                <p class="mt-5 text-base text-stone-600 dark:text-stone-400 lg:text-lg">
+                    Discover today's most loved fragrances.
+                </p>
+
+            </div>
+
+            <a
+                href="http://ralphdevincaperfumary.test/explore?trending=1"
+                class="font-medium text-[#B08D57] transition hover:underline">
+
+                View All →
+
+            </a>
+
+        </div>
+
+        
+        <div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/armani-code-eau-de-parfum"
+        class="absolute inset-0 z-10"
+        aria-label="Armani Code Eau de Parfum"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/armani-code-edp.jpg"
+            alt="Armani Code Eau de Parfum"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/armani-code-eau-de-parfum';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/giorgio-armani"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Giorgio Armani
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Armani Code Eau de Parfum
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Woody
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.0
+            </span>
+
+            <span>
+                men • Autumn
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/good-girl-gone-bad"
+        class="absolute inset-0 z-10"
+        aria-label="Good Girl Gone Bad"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/kilian-good-girl-gone-bad.jpg"
+            alt="Good Girl Gone Bad"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/good-girl-gone-bad';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/kilian"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Kilian
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Good Girl Gone Bad
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Floral
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.0
+            </span>
+
+            <span>
+                women • Spring
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/gypsy-water"
+        class="absolute inset-0 z-10"
+        aria-label="Gypsy Water"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/gypsy-water.jpg"
+            alt="Gypsy Water"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/gypsy-water';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/byredo"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Byredo
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Gypsy Water
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Woody
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.0
+            </span>
+
+            <span>
+                unisex • Spring
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/erba-pura"
+        class="absolute inset-0 z-10"
+        aria-label="Erba Pura"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/xerjoff-erba-pura.jpg"
+            alt="Erba Pura"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/erba-pura';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/xerjoff"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Xerjoff
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Erba Pura
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Musky
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.0
+            </span>
+
+            <span>
+                unisex • Spring
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="bg-stone-50 py-24 transition-colors duration-300 dark:bg-[#1B1A17]">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        
+        <div class="mb-16 flex flex-wrap items-end justify-between gap-6">
+
+            <div>
+                <p class="text-sm uppercase tracking-[0.4em] text-[#B08D57]">
+                    Just Added
+                </p>
+
+                <h2 class="mt-3 font-serif text-4xl font-semibold lg:text-5xl">
+                    New to the Library
+                </h2>
+
+                <p class="mt-5 text-base text-stone-600 dark:text-stone-400 lg:text-lg">
+                    The latest fragrances added to the encyclopedia.
+                </p>
+
+            </div>
+
+            <a
+                href="http://ralphdevincaperfumary.test/explore?sort=Newest"
+                class="font-medium text-[#B08D57] transition hover:underline">
+
+                View All →
+
+            </a>
+
+        </div>
+
+        
+        <div class="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/back-to-black-aphrodisiac"
+        class="absolute inset-0 z-10"
+        aria-label="Back to Black, Aphrodisiac"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/kilian-back-to-black.jpg"
+            alt="Back to Black, Aphrodisiac"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/back-to-black-aphrodisiac';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/kilian"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Kilian
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Back to Black, Aphrodisiac
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Gourmand
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.1
+            </span>
+
+            <span>
+                unisex • Autumn
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/original-santal"
+        class="absolute inset-0 z-10"
+        aria-label="Original Santal"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/creed-original-santal.jpg"
+            alt="Original Santal"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/original-santal';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/creed"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Creed
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Original Santal
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Woody
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.1
+            </span>
+
+            <span>
+                unisex • Autumn
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/alexandria-iii-anniversary"
+        class="absolute inset-0 z-10"
+        aria-label="Alexandria III"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/xerjoff-alexandria-iii-anniversary.jpg"
+            alt="Alexandria III"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/alexandria-iii-anniversary';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/xerjoff"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Xerjoff
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Alexandria III
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Woody
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.2
+            </span>
+
+            <span>
+                unisex • Autumn
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+                <div
+    class="group relative block overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+    
+    <a
+        href="http://ralphdevincaperfumary.test/perfume/mamluk"
+        class="absolute inset-0 z-10"
+        aria-label="Mamluk"></a>
+
+    
+    <div class="overflow-hidden">
+
+        <img
+            src="http://ralphdevincaperfumary.test/images/perfumes/xerjoff-mamluk.jpg"
+            alt="Mamluk"
+            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/perfume/mamluk';"
+            class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
+
+    </div>
+
+    
+    <div class="p-6">
+
+        
+            <a
+                href="http://ralphdevincaperfumary.test/brand/xerjoff"
+                class="relative z-20 text-xs uppercase tracking-[0.25em] text-stone-500 transition hover:text-[#B08D57]">
+                Xerjoff
+            </a>
+
+        
+        <h3 class="mt-2 font-serif text-2xl">
+            Mamluk
+        </h3>
+
+        <span
+            class="mt-4 inline-block rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-700">
+
+            Amber
+
+        </span>
+
+        <div class="mt-5 flex items-center justify-between text-sm text-stone-500">
+
+            <span>
+                ⭐ 4.1
+            </span>
+
+            <span>
+                unisex • Autumn
+            </span>
+
+        </div>
+
+        <span
+            class="mt-6 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+            View Details →
+
+        </span>
+
+    </div>
+
+</div>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="py-24">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        
+        <div class="mb-16 text-center">
+
+            <p class="text-sm uppercase tracking-[0.4em] text-[#B08D57]">
+                Today's Spotlight
+            </p>
+
+            <h2 class="mt-3 font-serif text-4xl font-semibold lg:text-5xl">
+                Worth Discovering
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-2xl text-base text-stone-600 dark:text-stone-400 lg:text-lg">
+                A house and an ingredient we think deserve your attention today.
+            </p>
+
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-2">
+
+            
+            
+                <a href="http://ralphdevincaperfumary.test/brand/dior"
+                    class="group flex flex-col overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="http://ralphdevincaperfumary.test/images/brands/dior.jpg"
+                            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/brand/dior';"
+                            alt="Dior"
+                            class="h-64 w-full object-cover transition duration-700 group-hover:scale-105">
+
+                    </div>
+
+                    <div class="flex flex-1 flex-col p-8">
+
+                        <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                            Featured House
+                        </p>
+
+                        <h3 class="mt-4 font-serif text-3xl">
+                            Dior
+                        </h3>
+
+                                                    <p class="mt-2 text-sm text-stone-500">
+                                Paris, France                                 &bull;                                 1946                            </p>
+                        
+                        <p class="mt-4 flex-1 leading-8 text-stone-600 dark:text-stone-400">
+                            Founded by Christian Dior in 1946, Dior has become one of the world&#039;s most celebrated luxury maisons. Renowned for its haute couture, craftsmanship, and refined aesthetic, the bran...
+                        </p>
+
+                        <div class="mt-8 flex items-center justify-between">
+
+                            <span class="text-sm text-stone-500">
+                                2 fragrances
+                            </span>
+
+                            <span class="font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                                Discover →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            
+            
+            
+                <a href="http://ralphdevincaperfumary.test/note/grapefruit"
+                    class="group flex flex-col overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-stone-700 dark:bg-[#232323]">
+
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="http://ralphdevincaperfumary.test/images/notes/grapefruit.jpg"
+                            onerror="this.onerror=null;this.src='http://ralphdevincaperfumary.test/placeholder/note/grapefruit';"
+                            alt="Grapefruit"
+                            class="h-64 w-full object-cover transition duration-700 group-hover:scale-105">
+
+                    </div>
+
+                    <div class="flex flex-1 flex-col p-8">
+
+                        <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                            Featured Note
+                        </p>
+
+                        <h3 class="mt-4 font-serif text-3xl">
+                            Grapefruit
+                        </h3>
+
+                        <div class="mt-3 flex flex-wrap gap-2">
+
+                                                            <span class="rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-800">
+                                    Citrus
+                                </span>
+                            
+                                                            <span class="rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-800">
+                                    Top Note
+                                </span>
+                            
+                                                            <span class="rounded-full bg-stone-100 px-3 py-1 text-xs dark:bg-stone-800">
+                                    Natural
+                                </span>
+                            
+                        </div>
+
+                        <p class="mt-4 flex-1 leading-8 text-stone-600 dark:text-stone-400">
+                            A cold-pressed peel oil from grapefruit, dominated by d-limonene with trace nootkatone, giving a bright, zesty, bittersweet citrus scent.
+                        </p>
+
+                        <div class="mt-8 flex items-center justify-between">
+
+                            <span class="text-sm text-stone-500">
+                                Used in 14 perfumes
+                            </span>
+
+                            <span class="font-medium text-[#B08D57] transition group-hover:translate-x-1">
+                                Discover →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="py-24">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        
+        <div class="mb-16 flex flex-wrap items-end justify-between gap-6">
+
+            <div>
+
+                <p class="text-sm uppercase tracking-[0.4em] text-[#B08D57]">
+                    Learn
+                </p>
+
+                <h2 class="mt-3 font-serif text-4xl font-semibold lg:text-5xl">
+                    Fragrance Academy
+                </h2>
+
+                <p class="mt-5 max-w-2xl text-base text-stone-600 dark:text-stone-400 lg:text-lg">
+
+                    Learn perfume step by step through structured lessons,
+                    from the fundamentals to advanced fragrance knowledge.
+
+                </p>
+
+            </div>
+
+            <a
+                href="http://ralphdevincaperfumary.test/academy"
+                class="font-medium text-[#B08D57] transition hover:underline">
+
+                View All →
+
+            </a>
+
+        </div>
+
+        
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            
+                <a
+                    href="http://ralphdevincaperfumary.test/academy/introduction"
+                    class="group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-stone-800 dark:bg-[#242424]">
+
+                    
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="http://ralphdevincaperfumary.test/images/academy/introduction.jpg"
+                            alt="Introduction to Perfume"
+                            class="h-64 w-full object-cover transition duration-500 group-hover:scale-105">
+
+                    </div>
+
+                    
+                    <div class="p-7">
+
+                        <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                            Academy
+                        </p>
+
+                        <h3 class="mt-4 font-serif text-3xl">
+                            Introduction to Perfume
+                        </h3>
+
+                        <p class="mt-4 leading-7 text-stone-600 dark:text-stone-400">
+                            Learn the fundamentals of perfumery, fragrance structure, and how perfumes evolve from the first spray to the dry down.
+                        </p>
+
+                        <div class="mt-8 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+                            Read Lesson
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.8"
+                                    d="M9 5l7 7-7 7"/>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            
+                <a
+                    href="http://ralphdevincaperfumary.test/academy/notes"
+                    class="group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-stone-800 dark:bg-[#242424]">
+
+                    
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="http://ralphdevincaperfumary.test/images/academy/fragrance-notes.png"
+                            alt="Fragrance Notes"
+                            class="h-64 w-full object-cover transition duration-500 group-hover:scale-105">
+
+                    </div>
+
+                    
+                    <div class="p-7">
+
+                        <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                            Academy
+                        </p>
+
+                        <h3 class="mt-4 font-serif text-3xl">
+                            Fragrance Notes
+                        </h3>
+
+                        <p class="mt-4 leading-7 text-stone-600 dark:text-stone-400">
+                            Understand Top, Heart, and Base Notes, and discover how every ingredient shapes the scent journey.
+                        </p>
+
+                        <div class="mt-8 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+                            Read Lesson
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.8"
+                                    d="M9 5l7 7-7 7"/>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            
+                <a
+                    href="http://ralphdevincaperfumary.test/academy/families"
+                    class="group overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-stone-800 dark:bg-[#242424]">
+
+                    
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="http://ralphdevincaperfumary.test/images/academy/fragrance-families.jpg"
+                            alt="Fragrance Families"
+                            class="h-64 w-full object-cover transition duration-500 group-hover:scale-105">
+
+                    </div>
+
+                    
+                    <div class="p-7">
+
+                        <p class="text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                            Academy
+                        </p>
+
+                        <h3 class="mt-4 font-serif text-3xl">
+                            Fragrance Families
+                        </h3>
+
+                        <p class="mt-4 leading-7 text-stone-600 dark:text-stone-400">
+                            Explore Floral, Woody, Amber, Citrus, Fresh, Gourmand, and many other fragrance families.
+                        </p>
+
+                        <div class="mt-8 inline-flex items-center gap-2 font-medium text-[#B08D57] transition group-hover:gap-3">
+
+                            Read Lesson
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.8"
+                                    d="M9 5l7 7-7 7"/>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            
+        </div>
+
+    </div>
+
+</section>
+<section class="py-20">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        <div
+            class="rounded-[40px]
+            border border-stone-200
+            bg-white
+            px-10 py-14
+            text-center
+            shadow-sm
+            transition-colors duration-300
+            dark:border-stone-700
+            dark:bg-[#232323]">
+
+            
+            <p class="text-xs font-medium uppercase tracking-[0.45em] text-[#B08D57]">
+
+                Ralph de Vinca
+
+            </p>
+
+            
+            <h2 class="mt-5 font-serif text-4xl leading-tight lg:text-5xl">
+
+                Begin Your
+                <br>
+
+                Fragrance Journey
+
+            </h2>
+
+            
+            <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-stone-600 transition-colors duration-300 dark:text-stone-400">
+
+                Explore perfumes from around the world,
+                understand fragrance notes,
+                and discover the scent that truly
+                matches your personality.
+
+            </p>
+
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+
+                <a
+                    href="http://ralphdevincaperfumary.test/explore"
+                    class="rounded-full bg-[#B08D57] px-8 py-3 font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+                    Explore Perfumes →
+
+                </a>
+
+                <a
+                    href="http://ralphdevincaperfumary.test/academy"
+                    class="rounded-full border border-stone-300 px-8 py-3 font-medium transition-all duration-300 hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-600">
+
+                    Learn Academy →
+
+                </a>
+
+            </div>
+
+            
+            <div class="mx-auto mt-10 h-px w-40 bg-stone-200 dark:bg-stone-700"></div>
+
+            
+            <div class="mt-10 grid grid-cols-3 gap-6">
+
+                <a href="http://ralphdevincaperfumary.test/explore" class="group">
+
+                    <h3 class="font-serif text-3xl text-[#B08D57]">
+                        130
+                    </h3>
+
+                    <p class="mt-2 text-xs uppercase tracking-[0.25em] text-stone-500 transition group-hover:text-[#B08D57]">
+
+                        Perfumes
+
+                    </p>
+
+                </a>
+
+                <a href="http://ralphdevincaperfumary.test/brands" class="group">
+
+                    <h3 class="font-serif text-3xl text-[#B08D57]">
+                        24
+                    </h3>
+
+                    <p class="mt-2 text-xs uppercase tracking-[0.25em] text-stone-500 transition group-hover:text-[#B08D57]">
+
+                        Houses
+
+                    </p>
+
+                </a>
+
+                <a href="http://ralphdevincaperfumary.test/notes" class="group">
+
+                    <h3 class="font-serif text-3xl text-[#B08D57]">
+                        169
+                    </h3>
+
+                    <p class="mt-2 text-xs uppercase tracking-[0.25em] text-stone-500 transition group-hover:text-[#B08D57]">
+
+                        Notes
+
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+    </main>
+
+    <footer class="border-t border-stone-200 bg-stone-50 py-20 transition-colors duration-300 dark:border-stone-700 dark:bg-[#232323]">
+
+    <div class="mx-auto max-w-7xl px-8 lg:px-16">
+
+        <div class="grid gap-12 md:grid-cols-3">
+
+            
+            <div>
+
+                <p class="font-serif text-2xl text-stone-900 dark:text-stone-100">
+                    Ralph de Vinca
+                </p>
+
+                <p class="mt-1 text-xs uppercase tracking-[0.35em] text-[#B08D57]">
+                    Perfumary
+                </p>
+
+                <p class="mt-5 max-w-xs text-sm leading-7 text-stone-500 dark:text-stone-400">
+                    A fragrance encyclopedia — explore perfumes, houses,
+                    and the raw materials behind every scent.
+                </p>
+
+            </div>
+
+            
+            <div>
+
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-500">
+                    Discover
+                </p>
+
+                <div class="mt-5 flex flex-col gap-3 text-sm text-stone-600 dark:text-stone-300">
+
+                    <a href="http://ralphdevincaperfumary.test/explore" class="transition hover:text-[#B08D57]">Explore Perfumes</a>
+                    <a href="http://ralphdevincaperfumary.test/brands" class="transition hover:text-[#B08D57]">Fragrance Houses</a>
+                    <a href="http://ralphdevincaperfumary.test/notes" class="transition hover:text-[#B08D57]">Fragrance Notes</a>
+
+                </div>
+
+            </div>
+
+            
+            <div>
+
+                <p class="text-xs uppercase tracking-[0.3em] text-stone-500">
+                    Learn
+                </p>
+
+                <div class="mt-5 flex flex-col gap-3 text-sm text-stone-600 dark:text-stone-300">
+
+                    <a href="http://ralphdevincaperfumary.test/academy" class="transition hover:text-[#B08D57]">Fragrance Academy</a>
+                    <a href="http://ralphdevincaperfumary.test/academy/notes" class="transition hover:text-[#B08D57]">Understanding Notes</a>
+                    <a href="http://ralphdevincaperfumary.test/about" class="transition hover:text-[#B08D57]">About</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mt-16 border-t border-stone-200 pt-8 text-center text-sm text-stone-500 dark:border-stone-700 dark:text-stone-400">
+
+            © 2026 Ralph de Vinca Perfumary
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
