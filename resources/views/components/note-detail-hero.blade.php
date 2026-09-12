@@ -73,7 +73,7 @@
             <div>
 
                 <img
-                    src="{{ asset($note->image) }}"
+                    src="{{ $note->photo_url }}"
                     alt="{{ $note->name }}"
                     onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                     class="mx-auto w-80">

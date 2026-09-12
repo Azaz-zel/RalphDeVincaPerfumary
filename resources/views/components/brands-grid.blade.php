@@ -16,7 +16,7 @@
                 <div class="overflow-hidden">
 
                     <img loading="lazy" decoding="async"
-                        src="{{ $brand->hero_image ? asset($brand->hero_image) : route('placeholder.brand', $brand->slug) }}"
+                        src="{{ $brand->photo_url }}"
                         alt="{{ $brand->name }}"
                         onerror="this.onerror=null;this.src='{{ route('placeholder.brand', $brand->slug) }}';"
                         class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">

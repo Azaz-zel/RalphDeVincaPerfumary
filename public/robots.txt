@@ -4,6 +4,9 @@ Allow: /
 # Work in progress — not ready to be indexed yet.
 Disallow: /articles
 
+# Internal working page for reviewing fetched photos.
+Disallow: /note-photo-review.html
+
 # Generated placeholder images carry no content value.
 Disallow: /placeholder/
 

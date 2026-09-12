@@ -34,7 +34,7 @@
                     <div class="overflow-hidden">
 
                         <img loading="lazy" decoding="async"
-                            src="{{ $brand->hero_image ? asset($brand->hero_image) : route('placeholder.brand', $brand->slug) }}"
+                            src="{{ $brand->photo_url }}"
                             onerror="this.onerror=null;this.src='{{ route('placeholder.brand', $brand->slug) }}';"
                             alt="{{ $brand->name }}"
                             class="h-64 w-full object-cover transition duration-700 group-hover:scale-105">
@@ -90,7 +90,7 @@
                     <div class="overflow-hidden">
 
                         <img loading="lazy" decoding="async"
-                            src="{{ $note->image ? asset($note->image) : route('placeholder.note', $note->slug) }}"
+                            src="{{ $note->photo_url }}"
                             onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                             alt="{{ $note->name }}"
                             class="h-64 w-full object-cover transition duration-700 group-hover:scale-105">

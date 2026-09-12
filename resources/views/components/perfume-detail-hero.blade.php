@@ -51,10 +51,45 @@
             <div>
 
                 <img
-                    src="{{ asset($perfume->image) }}"
+                    src="{{ $perfume->photo_url }}"
                     alt="{{ $perfume->name }}"
                     onerror="this.onerror=null;this.src='{{ route('placeholder.perfume', $perfume->slug) }}';"
                     class="w-full rounded-3xl object-cover shadow-xl">
+
+                {{-- No free photo of this bottle exists, so the house's own
+                     picture stands in; say so rather than let it pass as the product. --}}
+                @if($perfume->image_is_brand_fallback)
+
+                    <p class="mt-3 text-xs leading-5 text-stone-500">
+                        Pictured: {{ $perfume->brand->name }}. No photograph of this bottle
+                        is available under a free licence.
+                    </p>
+
+                @endif
+
+                {{-- Wikimedia Commons photos are CC-licensed, so the author is credited. --}}
+                @if($perfume->image_credit || $perfume->image_license)
+
+                    <p class="mt-3 text-xs leading-5 text-stone-500">
+
+                        Photo:
+
+                        @if($perfume->image_source)
+                            <a href="{{ $perfume->image_source }}"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                class="underline underline-offset-2 transition hover:text-[#B08D57]">{{ $perfume->image_credit ?: 'Wikimedia Commons' }}</a>
+                        @else
+                            {{ $perfume->image_credit }}
+                        @endif
+
+                        @if($perfume->image_license)
+                            &bull; {{ $perfume->image_license }}
+                        @endif
+
+                    </p>
+
+                @endif
 
             </div>
 

@@ -1537,3 +1537,82 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+/* ============================================================
+   Find Your Scent quiz
+
+   The markup is a plain radio form that works on its own, so this
+   only upgrades it: one question at a time, a progress bar, and a
+   Back button. With JS off the visitor simply scrolls and submits.
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.querySelector("form[data-quiz]");
+
+    if (!form) return;
+
+    const steps = Array.from(form.querySelectorAll("[data-quiz-step]"));
+
+    if (steps.length === 0) return;
+
+    const progressBar = form.querySelector("[data-quiz-progress-bar]");
+    const progressFill = form.querySelector("[data-quiz-progress]");
+    const counter = form.querySelector("[data-quiz-current]");
+    const backButton = form.querySelector("[data-quiz-back]");
+    const submitButton = form.querySelector("[data-quiz-submit]");
+
+    let index = 0;
+    let advancing = false;
+
+    // Entering stepper mode is what hides the all-at-once view.
+    if (progressBar) progressBar.hidden = false;
+    if (submitButton) submitButton.hidden = true;
+
+    const render = () => {
+        steps.forEach((step, position) => {
+            step.hidden = position !== index;
+        });
+
+        if (counter) counter.textContent = String(index + 1);
+        if (backButton) backButton.hidden = index === 0;
+
+        if (progressFill) {
+            progressFill.style.width = `${((index + 1) / steps.length) * 100}%`;
+        }
+    };
+
+    render();
+
+    form.addEventListener("change", (event) => {
+        if (!event.target.matches("input[type='radio']")) return;
+        if (advancing) return;
+
+        advancing = true;
+
+        // A short pause lets the chosen card show its selected state
+        // before the next question replaces it.
+        window.setTimeout(() => {
+            if (index >= steps.length - 1) {
+                form.submit();
+                return;
+            }
+
+            index += 1;
+            advancing = false;
+            render();
+
+            // Only scrolls when the question has moved out of view.
+            progressBar?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 240);
+    });
+
+    backButton?.addEventListener("click", () => {
+        if (index === 0) return;
+
+        index -= 1;
+        render();
+    });
+
+});

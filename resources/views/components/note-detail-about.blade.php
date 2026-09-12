@@ -10,10 +10,34 @@
             <div>
 
                 <img loading="lazy" decoding="async"
-                    src="{{ asset($note->about_image ?? $note->image) }}"
+                    src="{{ $note->about_image && file_exists(public_path($note->about_image)) ? asset($note->about_image) : $note->photo_url }}"
                     alt="{{ $note->name }}"
                     onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                     class="w-full rounded-3xl object-cover shadow-lg">
+
+                {{-- Wikimedia Commons photos are CC-licensed, so the author is credited. --}}
+                @if($note->image_credit || $note->image_license)
+
+                    <p class="mt-3 text-xs leading-5 text-stone-500">
+
+                        Photo:
+
+                        @if($note->image_source)
+                            <a href="{{ $note->image_source }}"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                class="underline underline-offset-2 transition hover:text-[#B08D57]">{{ $note->image_credit ?: 'Wikimedia Commons' }}</a>
+                        @else
+                            {{ $note->image_credit }}
+                        @endif
+
+                        @if($note->image_license)
+                            &bull; {{ $note->image_license }}
+                        @endif
+
+                    </p>
+
+                @endif
 
             </div>
 

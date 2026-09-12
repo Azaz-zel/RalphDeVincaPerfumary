@@ -68,7 +68,7 @@
                                 @if($note->image)
 
                                     <img loading="lazy" decoding="async"
-                                        src="{{ asset($note->image) }}"
+                                        src="{{ $note->photo_url }}"
                                         alt="{{ $note->name }}"
                                         onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                                         class="h-full w-full object-cover
@@ -144,7 +144,7 @@
                                 @if($note->image)
 
                                     <img loading="lazy" decoding="async"
-                                        src="{{ asset($note->image) }}"
+                                        src="{{ $note->photo_url }}"
                                         alt="{{ $note->name }}"
                                         onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                                         class="h-full w-full object-cover
@@ -220,7 +220,7 @@
                                 @if($note->image)
 
                                     <img loading="lazy" decoding="async"
-                                        src="{{ asset($note->image) }}"
+                                        src="{{ $note->photo_url }}"
                                         alt="{{ $note->name }}"
                                         onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                                         class="h-full w-full object-cover

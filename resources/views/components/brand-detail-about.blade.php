@@ -10,10 +10,34 @@
             <div>
 
                 <img loading="lazy" decoding="async"
-                    src="{{ ($brand->about_image ?? $brand->hero_image) ? asset($brand->about_image ?? $brand->hero_image) : route('placeholder.brand', $brand->slug) }}"
+                    src="{{ $brand->about_image && file_exists(public_path($brand->about_image)) ? asset($brand->about_image) : $brand->photo_url }}"
                     alt="{{ $brand->name }} Boutique"
                     onerror="this.onerror=null;this.src='{{ route('placeholder.brand', $brand->slug) }}';"
                     class="w-full rounded-3xl object-cover shadow-lg">
+
+                {{-- Wikimedia Commons photos are CC-licensed, so the author is credited. --}}
+                @if($brand->image_credit || $brand->image_license)
+
+                    <p class="mt-3 text-xs leading-5 text-stone-500">
+
+                        Photo:
+
+                        @if($brand->image_source)
+                            <a href="{{ $brand->image_source }}"
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                class="underline underline-offset-2 transition hover:text-[#B08D57]">{{ $brand->image_credit ?: 'Wikimedia Commons' }}</a>
+                        @else
+                            {{ $brand->image_credit }}
+                        @endif
+
+                        @if($brand->image_license)
+                            &bull; {{ $brand->image_license }}
+                        @endif
+
+                    </p>
+
+                @endif
 
             </div>
 

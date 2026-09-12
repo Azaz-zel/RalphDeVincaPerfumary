@@ -117,7 +117,7 @@
                 <a href="{{ route('perfume.detail', $heroPerfume->slug) }}" class="group block text-center">
 
                     <img
-                        src="{{ asset($heroPerfume->image) }}"
+                        src="{{ $heroPerfume->photo_url }}"
                         onerror="this.onerror=null;this.src='{{ route('placeholder.perfume', $heroPerfume->slug) }}';"
                         class="w-[420px] rounded-3xl drop-shadow-2xl transition duration-700 group-hover:scale-105"
                         alt="{{ $heroPerfume->name }}">

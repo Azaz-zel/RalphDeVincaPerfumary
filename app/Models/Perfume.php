@@ -412,4 +412,22 @@ class Perfume extends Model
 
         return array_slice(array_values(array_unique($cons)), 0, 5);
     }
+
+    /**
+     * URL of the photo to display, falling back to the generated placeholder.
+     *
+     * The image column keeps its slug-derived path even when no file has been
+     * supplied yet, so that dropping one in makes it appear without a database
+     * change. Checking here means a missing file renders the placeholder
+     * straight away instead of costing every card a 404 and a visible flash of
+     * a broken image before the onerror handler swaps it out.
+     */
+    public function getPhotoUrlAttribute(): string
+    {
+        if ($this->image && file_exists(public_path($this->image))) {
+            return asset($this->image);
+        }
+
+        return route('placeholder.perfume', $this->slug);
+    }
 }

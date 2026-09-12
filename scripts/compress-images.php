@@ -13,14 +13,31 @@
  *
  * File extensions are never changed, so no view references break.
  *
- * Usage:  php scripts/compress-images.php [--dry-run]
+ * Usage:  php scripts/compress-images.php [--dry-run] [--dir=notes]
+ *                                          [--max-width=800] [--quality=78]
  */
 
-const MAX_WIDTH = 1400;
-const QUALITY = 82;
-
 $dryRun = in_array('--dry-run', $argv, true);
+
+// Width and quality are overridable so a folder of oversized downloads can be
+// squeezed harder than the hand-placed artwork.
+$maxWidth = 1400;
+$quality = 82;
 $root = dirname(__DIR__).'/public/images';
+
+foreach ($argv as $arg) {
+    if (str_starts_with($arg, '--max-width=')) {
+        $maxWidth = max(200, (int) substr($arg, 12));
+    }
+
+    if (str_starts_with($arg, '--quality=')) {
+        $quality = min(100, max(40, (int) substr($arg, 10)));
+    }
+
+    if (str_starts_with($arg, '--dir=')) {
+        $root = dirname(__DIR__).'/public/images/'.trim(substr($arg, 6), '/');
+    }
+}
 
 if (! is_dir($root)) {
     exit("Folder not found: {$root}\n");
@@ -76,9 +93,9 @@ foreach ($files as $path) {
     }
 
     // Downscale when wider than needed.
-    if ($width > MAX_WIDTH) {
-        $newWidth = MAX_WIDTH;
-        $newHeight = (int) round($height * (MAX_WIDTH / $width));
+    if ($width > $maxWidth) {
+        $newWidth = $maxWidth;
+        $newHeight = (int) round($height * ($maxWidth / $width));
 
         $resized = imagecreatetruecolor($newWidth, $newHeight);
 
@@ -114,7 +131,7 @@ foreach ($files as $path) {
         imagedestroy($source);
         $source = $flat;
 
-        $ok = imagejpeg($source, $tempPath, QUALITY);
+        $ok = imagejpeg($source, $tempPath, $quality);
     }
 
     imagedestroy($source);

@@ -32,7 +32,7 @@
             @forelse($similarPerfumes as $similar)
 
                 <x-explore-perfume
-                    :image="$similar->image"
+                    :image="$similar->photo_url"
                     :brand="$similar->brand?->name ?? 'Unknown Brand'"
                     :brand-slug="$similar->brand?->slug"
                     :name="$similar->name"

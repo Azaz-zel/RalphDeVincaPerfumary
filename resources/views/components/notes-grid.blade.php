@@ -16,7 +16,7 @@
                 <div class="mx-auto h-20 w-20 overflow-hidden rounded-full bg-stone-100 dark:bg-stone-800">
 
                     <img loading="lazy" decoding="async"
-                        src="{{ $note->image ? asset($note->image) : route('placeholder.note', $note->slug) }}"
+                        src="{{ $note->photo_url }}"
                         alt="{{ $note->name }}"
                         onerror="this.onerror=null;this.src='{{ route('placeholder.note', $note->slug) }}';"
                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110">

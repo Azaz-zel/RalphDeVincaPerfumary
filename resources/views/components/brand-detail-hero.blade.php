@@ -41,7 +41,7 @@
             <div>
 
                 <img
-                    src="{{ $brand->hero_image ? asset($brand->hero_image) : route('placeholder.brand', $brand->slug) }}"
+                    src="{{ $brand->photo_url }}"
                     alt="{{ $brand->name }}"
                     onerror="this.onerror=null;this.src='{{ route('placeholder.brand', $brand->slug) }}';"
                     class="w-full rounded-3xl object-cover shadow-xl">

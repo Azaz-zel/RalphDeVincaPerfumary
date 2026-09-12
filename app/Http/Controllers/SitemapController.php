@@ -18,6 +18,7 @@ class SitemapController extends Controller
         ['explore', 0.9],
         ['brands.index', 0.9],
         ['notes.index', 0.9],
+        ['quiz', 0.8],
         ['academy', 0.8],
         ['academy.introduction', 0.6],
         ['academy.notes', 0.6],

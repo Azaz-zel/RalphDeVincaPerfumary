@@ -2,6 +2,7 @@
     $navLinks = [
         ['label' => 'Home', 'route' => 'home'],
         ['label' => 'Explore', 'route' => 'explore'],
+        ['label' => 'Find Your Scent', 'route' => 'quiz'],
         ['label' => 'Brands', 'route' => 'brands.index'],
         ['label' => 'Notes', 'route' => 'notes.index'],
         ['label' => 'Academy', 'route' => 'academy'],

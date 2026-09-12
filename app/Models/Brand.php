@@ -47,4 +47,22 @@ class Brand extends Model
     {
         return $this->hasMany(BrandMilestone::class)->orderBy('sort_order');
     }
+
+    /**
+     * URL of the photo to display, falling back to the generated placeholder.
+     *
+     * The hero_image column keeps its slug-derived path even when no file has been
+     * supplied yet, so that dropping one in makes it appear without a database
+     * change. Checking here means a missing file renders the placeholder
+     * straight away instead of costing every card a 404 and a visible flash of
+     * a broken image before the onerror handler swaps it out.
+     */
+    public function getPhotoUrlAttribute(): string
+    {
+        if ($this->hero_image && file_exists(public_path($this->hero_image))) {
+            return asset($this->hero_image);
+        }
+
+        return route('placeholder.brand', $this->slug);
+    }
 }

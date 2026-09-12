@@ -8,6 +8,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PlaceholderController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\QuizController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -68,6 +69,12 @@ Route::get('/placeholder/perfume/{slug}', [PlaceholderController::class, 'perfum
 
 Route::get('/placeholder/note/{slug}', [PlaceholderController::class, 'note'])
     ->name('placeholder.note');
+
+Route::get('/quiz', [QuizController::class, 'index'])
+    ->name('quiz');
+
+Route::get('/quiz/result', [QuizController::class, 'result'])
+    ->name('quiz.result');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])
     ->name('sitemap');

@@ -45,7 +45,7 @@
                 @foreach($perfumes as $perfume)
 
                     <x-explore-perfume
-                        :image="$perfume->image"
+                        :image="$perfume->photo_url"
                         :brand="$brand->name"
                         :name="$perfume->name"
                         :slug="$perfume->slug"

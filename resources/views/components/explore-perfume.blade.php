@@ -23,7 +23,7 @@
     <div class="overflow-hidden">
 
         <img loading="lazy" decoding="async"
-            src="{{ asset($image) }}"
+            src="{{ $image }}"
             alt="{{ $name }}"
             onerror="this.onerror=null;this.src='{{ $slug ? route('placeholder.perfume', $slug) : asset('images/placeholder.svg') }}';"
             class="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105">
