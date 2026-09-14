@@ -1,0 +1,28 @@
+services:
+  perfumery:
+    build: .
+    container_name: perfumery
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    volumes:
+      - ./.env:/var/www/html/.env
+      - perfumery-storage:/var/www/html/storage/app
+    depends_on:
+      - perfumery-db
+
+  perfumery-db:
+    image: mysql:8
+    container_name: perfumery-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: perfumery
+      MYSQL_USER: perfumery
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - perfumery-db-data:/var/lib/mysql
+
+volumes:
+  perfumery-storage:
+  perfumery-db-data:
