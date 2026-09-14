@@ -4,9 +4,28 @@
 
     @php
         $pageUrl = fn ($page) => route($route, array_merge(request()->query(), ['page' => $page]));
+
+        $current = $paginator->currentPage();
+        $last = $paginator->lastPage();
+
+        // Listing every page put eleven buttons in a row, which ran off the
+        // side of a phone. Only the first page, the last page and the current
+        // page's immediate neighbours are kept; the gaps become ellipses.
+        $window = collect(range(max(1, $current - 1), min($last, $current + 1)))
+            ->prepend(1)
+            ->push($last)
+            ->unique()
+            ->sort()
+            ->values();
+
+        // Narrow screens keep only the three pages around the current one, so
+        // the row always fits: arrows plus three numbers.
+        $nearCurrent = fn ($page) => abs($page - $current) <= 1;
     @endphp
 
-    <div class="flex flex-wrap items-center justify-center gap-2">
+    <nav
+        class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2"
+        aria-label="Pagination">
 
         {{-- Previous --}}
         @if ($paginator->onFirstPage())
@@ -22,7 +41,9 @@
         @else
 
             <a
-                href="{{ $pageUrl($paginator->currentPage() - 1) }}"
+                href="{{ $pageUrl($current - 1) }}"
+                rel="prev"
+                aria-label="Previous page"
                 class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 text-stone-600 transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-700 dark:text-stone-300">
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,12 +54,24 @@
 
         @endif
 
-        {{-- Page Numbers --}}
-        @foreach ($paginator->getUrlRange(1, $paginator->lastPage()) as $page => $url)
+        {{-- Page numbers --}}
+        @php $previousPage = 0; @endphp
 
-            @if ($page == $paginator->currentPage())
+        @foreach ($window as $page)
 
-                <span class="flex h-10 min-w-10 items-center justify-center rounded-full bg-[#B08D57] px-3 text-sm font-medium text-white">
+            @if ($page - $previousPage > 1)
+
+                <span class="hidden h-10 items-center px-1 text-sm text-stone-400 sm:flex">
+                    &hellip;
+                </span>
+
+            @endif
+
+            @if ($page == $current)
+
+                <span
+                    aria-current="page"
+                    class="flex h-10 min-w-10 items-center justify-center rounded-full bg-[#B08D57] px-3 text-sm font-medium text-white">
                     {{ $page }}
                 </span>
 
@@ -46,19 +79,29 @@
 
                 <a
                     href="{{ $pageUrl($page) }}"
-                    class="flex h-10 min-w-10 items-center justify-center rounded-full border border-stone-300 px-3 text-sm text-stone-600 transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-700 dark:text-stone-300">
+                    aria-label="Page {{ $page }}"
+                    class="{{ $nearCurrent($page) ? 'flex' : 'hidden sm:flex' }} h-10 min-w-10 items-center justify-center rounded-full border border-stone-300 px-3 text-sm text-stone-600 transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-700 dark:text-stone-300">
                     {{ $page }}
                 </a>
 
             @endif
 
+            @php $previousPage = $page; @endphp
+
         @endforeach
+
+        {{-- Position, for the pages hidden on small screens --}}
+        <span class="flex h-10 items-center px-2 text-sm text-stone-500 sm:hidden">
+            of {{ $last }}
+        </span>
 
         {{-- Next --}}
         @if ($paginator->hasMorePages())
 
             <a
-                href="{{ $pageUrl($paginator->currentPage() + 1) }}"
+                href="{{ $pageUrl($current + 1) }}"
+                rel="next"
+                aria-label="Next page"
                 class="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 text-stone-600 transition hover:border-[#B08D57] hover:text-[#B08D57] dark:border-stone-700 dark:text-stone-300">
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,6 +122,6 @@
 
         @endif
 
-    </div>
+    </nav>
 
 @endif

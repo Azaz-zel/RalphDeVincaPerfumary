@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="14" fill="#1B1A17"/>
+    <!-- Perfume bottle: cap, shoulders, body -->
+    <rect x="27" y="9" width="10" height="7" rx="2" fill="#B08D57"/>
+    <path d="M29 16h6v4.5l4.6 3.8A9 9 0 0 1 43 31v16a8 8 0 0 1-8 8h-6a8 8 0 0 1-8-8V31a9 9 0 0 1 3.4-6.7l4.6-3.8z" fill="#B08D57"/>
+    <!-- Monogram sits on the bottle body -->
+    <text x="32" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="19"
+          font-weight="600" fill="#1B1A17" text-anchor="middle">R</text>
+</svg>

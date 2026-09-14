@@ -22,6 +22,12 @@
     <meta name="description" content="{{ $pageDescription }}">
     <link rel="canonical" href="{{ url()->current() }}">
 
+    {{-- SVG scales to every tab and bookmark size; the PNG covers older browsers. --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#B08D57">
+
     @hasSection('robots')
         <meta name="robots" content="@yield('robots')">
     @endif
