@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500">
   <rect width="400" height="500" fill="#F5F3EF"/>
   <rect x="0.5" y="0.5" width="399" height="499" fill="none" stroke="#E7E1D6" stroke-width="1"/>
